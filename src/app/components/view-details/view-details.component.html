@@ -1,0 +1,37 @@
+<div class="details card border-secondary-subtle px-3 my-3 mx-auto">
+  <h3 class="mx-auto my-3"><u>Student Details Submitted</u></h3>
+  <div class="row my-2">
+    <div class="col"><b>Full Name:</b></div>
+    <div class="col">{{ studentDetails.fullName }}</div>
+  </div>
+  <div class="row my-2">
+    <div class="col"><b>Phone:</b></div>
+    <div class="col-md">{{ studentDetails.phone }}</div>
+  </div>
+  <div class="row my-2">
+    <div class="col"><b>Email:</b></div>
+    <div class="col-md">{{ studentDetails.email }}</div>
+  </div>
+  <div class="row my-2">
+    <div class="col"><b>Address:</b></div>
+    <div class="col-md">{{ studentDetails.address }}</div>
+  </div>
+  <div class="row my-2">
+    <div class="col"><b>Marks:</b></div>
+    <div class="col-md">{{ studentDetails.marks }}</div>
+  </div>
+  <div class="row my-2">
+    <div class="col"><b>School:</b></div>
+    <div class="col-md">{{ studentDetails.school }}</div>
+  </div>
+</div>
+
+<div>
+  <div>
+    <h3>Message: {{ message }}</h3>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="inputfield" />
+    <button (click)="sendMessage()">send</button>
+  </div>
+</div>

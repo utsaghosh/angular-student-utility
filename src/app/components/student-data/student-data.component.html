@@ -1,0 +1,167 @@
+<div class="register-form card border-secondary-subtle px-3 my-3 mx-auto">
+  <h3 class="mx-auto my-3">Student Details</h3>
+  <form [formGroup]="studentDataForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        formControlName="fullName"
+        [ngClass]="{
+          'is-invalid': form['fullName'].touched && form['fullName'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['fullName']?.invalid &&
+          (form['fullName']?.touched || form['fullName']?.dirty)
+        "
+      >
+        Full Name is required.
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <label class="form-label">Phone</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        formControlName="phone"
+        [ngClass]="{
+          'is-invalid': form['phone'].touched && form['phone'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['phone']?.invalid &&
+          (form['phone']?.touched || form['phone'].dirty)
+        "
+      >
+        <div *ngIf="form['phone'].errors?.['required']">
+          Phone No. is required
+        </div>
+        <div *ngIf="form['phone'].errors?.['pattern']">
+          Phone No. must be 10 digit number
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <label class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid': form['email'].touched && form['email'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['email']?.invalid &&
+          (form['email']?.touched || form['email'].dirty)
+        "
+      >
+        <div *ngIf="form['email'].errors?.['required']">Email is required</div>
+        <div *ngIf="form['email'].errors?.['email']">Enter valid email</div>
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <label class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        formControlName="address"
+        [ngClass]="{
+          'is-invalid': form['address'].touched && form['address'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['address']?.invalid &&
+          (form['address']?.touched || form['address']?.dirty)
+        "
+      >
+        Address is required.
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <label class="form-label">Marks (percentage)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="marks"
+        formControlName="marks"
+        [ngClass]="{
+          'is-invalid': form['marks'].touched && form['marks'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['marks']?.invalid &&
+          (form['marks']?.touched || form['marks'].dirty)
+        "
+      >
+        <div *ngIf="form['marks'].errors?.['required']">Marks is required</div>
+        <div *ngIf="form['marks'].errors?.['min']">
+          Marks cannot be less than 0
+        </div>
+        <div *ngIf="form['marks'].errors?.['max']">
+          Marks cannot be greater than 100
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <label class="form-label">School</label>
+      <input
+        type="text"
+        class="form-control"
+        id="school"
+        formControlName="school"
+        [ngClass]="{
+          'is-invalid': form['school'].touched && form['school'].errors
+        }"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form['school']?.invalid &&
+          (form['school']?.touched || form['school']?.dirty)
+        "
+      >
+        School is required.
+      </div>
+    </div>
+
+    <div class="form-group my-3">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="studentDataForm.invalid"
+      >
+        Submit
+      </button>
+      <button type="submit" class="btn btn-warning me-3" (click)="onReset()">
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
