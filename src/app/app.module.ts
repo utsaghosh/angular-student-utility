@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { StudentDataComponent } from './components/student-data/student-data.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
-import { DataService } from './services/data.service';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
